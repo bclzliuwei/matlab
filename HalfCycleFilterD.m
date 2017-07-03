@@ -1,6 +1,15 @@
 function [ HCosine, HSine ] = HalfCycleFilterD( FilterT, SignalT )
-%HalfCycleFilter 此处显示有关此函数的摘要
-%   此处显示详细说明
+%HalfCycleFilter 姝ゅ鏄剧ず鏈夊叧姝ゅ嚱鏁扮殑鎽樿
+%   姝ゅ鏄剧ず璇︾粏璇存槑
+
+if FilterT == 0
+    error('FilterT should not be zero!');
+end
+
+if SignalT == 0
+    error('SignalT should not be zero!');
+end
+
 HCosine = 0;
 HSine = 0;
 for Index = 1 : FilterT
