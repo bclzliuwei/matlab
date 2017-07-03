@@ -5,11 +5,11 @@ function [ HCosine, HSine ] = FullCycleFilterD( FilterT, SignalT )
 Offset = 0.5;
 
 if FilterT == 0
-    error('FilterT should not be zero!');
+    error('Parameter FilterT should not be zero!');
 end
 
 if SignalT == 0
-    error('SignalT should not be zero!');
+    error('Parameter SignalT should not be zero!');
 end
 
 HCosine = 0;
