@@ -1,10 +1,10 @@
-XRange = 0 : 0.01 : 0.5;
+XRange = 0 : 0.0001 : 1;
 XLabel = XRange;
 
 HArray = zeros(1, length(XRange));
 
 for Index = 1 : length(XRange)
-    HResponse = TriangularFIRFilter(3200, XRange(Index));
+    HResponse = TriangularFIRFilter(XRange(Index));
     
     HArray(Index) = HResponse;
 end
