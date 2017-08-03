@@ -1,0 +1,57 @@
+%{
+%CfgFilesPath = '\\gbsrd01fs03.dom1.ad.sys\PCS\ENG\General\ZFU\CT_saturation_comtrade_new_data\External\';%'C:\SVN_Working_Copies\BusbarDiff\ModelTests\Comtrade';
+%fileName = '025-Ext-XR90-IF25-POW0-FTA-N-Rb80.cfg';
+CfgFilesPath = '\\gbsrd01fs03.dom1.ad.sys\PCS\ENG\General\ZFU\CT_saturation_comtrade_new_data\';%'C:\SVN_Working_Copies\BusbarDiff\ModelTests\Comtrade';
+fileName = '035-Int-XR120-IF40-POW90-FTA-B-C-Rb110.cfg';
+[~,~,~, data] = ReadComtrade(CfgFilesPath,fileName);
+        Tm = data(:,2)/1E6;
+        
+        ILa = [Tm, data(:,3)]';
+        ILb = [Tm, data(:,4)]';
+        ILc = [Tm, data(:,5)]';
+        IRa = [Tm, data(:,6)]';
+        IRb = [Tm, data(:,7)]';
+        IRc = [Tm, data(:,8)]';
+        save('.\ILocal_Ia.mat', 'ILa');
+        save('.\IRemote_Ia.mat', 'IRa'); 
+        save('.\ILocal_Ib.mat', 'ILb');
+        save('.\IRemote_Ib.mat', 'IRb'); 
+        save('.\ILocal_Ic.mat', 'ILc');
+        save('.\IRemote_Ic.mat', 'IRc'); 
+ %}       
+%CfgFilesPath = 'C:\Users\224473\Documents\TNB_TestCase\External_fault';
+%CfgFilesPath = 'C:\Users\224473\Documents\TNB_TestCase\Internal_fault';
+% CfgFilesPath = 'C:\TNB_TestCase\Evolving_fault';
+CfgFilesPath = 'C:\TNB_TestCase\Evolving_fault';
+%fileName ='Test178.cfg';
+%fileName ='Test162.cfg';
+fileName ='Test207.cfg';        
+[~,~,~, data] = ReadComtrade(CfgFilesPath,fileName);
+Tm = data(:,2)/1E6;
+        
+        ILa = [Tm, data(:,3)]';
+        ILb = [Tm, data(:,4)]';
+        ILc = [Tm, data(:,5)]';
+        IRa = [Tm, data(:,6)]';
+        IRb = [Tm, data(:,7)]';
+        IRc = [Tm, data(:,8)]';
+        ILa1 = [Tm, data(:,9)]';
+        ILb1 = [Tm, data(:,10)]';
+        ILc1 = [Tm, data(:,11)]';
+        IRa1 = [Tm, data(:,12)]';
+        IRb1 = [Tm, data(:,13)]';
+        IRc1 = [Tm, data(:,14)]'; 
+        faultST = [Tm, data(:,62)]';
+        save('.\TNB\ILocal_Ia.mat', 'ILa');
+        save('.\TNB\IRemote_Ia.mat', 'IRa'); 
+        save('.\TNB\ILocal_Ib.mat', 'ILb');
+        save('.\TNB\IRemote_Ib.mat', 'IRb'); 
+        save('.\TNB\ILocal_Ic.mat', 'ILc');
+        save('.\TNB\IRemote_Ic.mat', 'IRc');
+        save('.\TNB\ILocal_Ia1.mat', 'ILa1');
+        save('.\TNB\IRemote_Ia1.mat', 'IRa1'); 
+        save('.\TNB\ILocal_Ib1.mat', 'ILb1');
+        save('.\TNB\IRemote_Ib1.mat', 'IRb1'); 
+        save('.\TNB\ILocal_Ic1.mat', 'ILc1');
+        save('.\TNB\IRemote_Ic1.mat', 'IRc1');
+        save('.\TNB\faultStart.mat', 'faultST');
